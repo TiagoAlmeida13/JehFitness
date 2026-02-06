@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeh Fitness | Moda & Performance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .bg-brand { background-color: #ff2d75; }
+        .text-brand { color: #ff2d75; }
+        .border-brand { border-color: #ff2d75; }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1518310383802-640c2de311b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navegação -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter text-brand">JEH<span class="text-black">FITNESS</span></div>
+            
+            <div class="hidden md:flex space-x-8 font-bold text-sm uppercase tracking-widest">
+                <a href="#home" class="hover:text-brand transition">Home</a>
+                <a href="#shop" class="hover:text-brand transition">Loja</a>
+                <a href="#consultoria" class="hover:text-brand transition">Consultoria</a>
+                <a href="#contato" class="hover:text-brand transition">Contato</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button class="relative p-2">
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                    <span class="absolute top-0 right-0 bg-brand text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center">0</span>
+                </button>
+                <button class="md:hidden" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white z-[60] hidden flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 text-3xl">&times;</button>
+        <a href="#home" onclick="toggleMenu()">Home</a>
+        <a href="#shop" onclick="toggleMenu()">Loja</a>
+        <a href="#consultoria" onclick="toggleMenu()">Consultoria</a>
+        <a href="#contato" onclick="toggleMenu()">Contato</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient h-[80vh] flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-3xl">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 uppercase italic">Supere seus Limites</h1>
+            <p class="text-lg md:text-xl mb-8 font-light opacity-90">Moda fitness premium e consultoria personalizada para transformar seu estilo de vida.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#shop" class="bg-brand hover:bg-pink-700 text-white px-10 py-4 rounded-full font-bold transition transform hover:scale-105">VER COLEÇÃO</a>
+                <a href="#consultoria" class="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white px-10 py-4 rounded-full font-bold transition">CONSULTORIA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destaques -->
+    <section class="py-12 bg-black text-white">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-truck-fast text-brand text-3xl mb-4"></i>
+                <h3 class="font-bold uppercase mb-2">Envio para todo Brasil</h3>
+                <p class="text-sm text-gray-400">Receba no conforto da sua casa.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-credit-card text-brand text-3xl mb-4"></i>
+                <h3 class="font-bold uppercase mb-2">Até 12x no Cartão</h3>
+                <p class="text-sm text-gray-400">Parcelamento facilitado sem juros.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <i class="fa-solid fa-shield-halved text-brand text-3xl mb-4"></i>
+                <h3 class="font-bold uppercase mb-2">Compra 100% Segura</h3>
+                <p class="text-sm text-gray-400">Proteção total dos seus dados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos (Loja) -->
+    <section id="shop" class="py-20 container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div>
+                <span class="text-brand font-bold uppercase tracking-widest text-sm">Best Sellers</span>
+                <h2 class="text-4xl font-black uppercase">Nossa Coleção</h2>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <button class="bg-gray-200 px-4 py-2 rounded-md text-sm font-bold active:bg-brand active:text-white">Todos</button>
+                <button class="px-4 py-2 rounded-md text-sm font-bold hover:text-brand">Conjuntos</button>
+                <button class="px-4 py-2 rounded-md text-sm font-bold hover:text-brand">Leggings</button>
+                <button class="px-4 py-2 rounded-md text-sm font-bold hover:text-brand">Tops</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Produto 1 -->
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden rounded-xl bg-gray-200 aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1506629082923-e91232b36953?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Conjunto Pink" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                        <button class="bg-white p-3 rounded-full hover:bg-brand hover:text-white transition"><i class="fa-solid fa-cart-plus"></i></button>
+                        <button class="bg-white p-3 rounded-full hover:bg-brand hover:text-white transition"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-bold text-lg">Conjunto Power Pink</h3>
+                    <p class="text-brand font-black">R$ 189,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden rounded-xl bg-gray-200 aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1571945153237-4929e783ee4a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Legging Seamless" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                        <button class="bg-white p-3 rounded-full hover:bg-brand hover:text-white transition"><i class="fa-solid fa-cart-plus"></i></button>
+                        <button class="bg-white p-3 rounded-full hover:bg-brand hover:text-white transition"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                    <span class="absolute top-4 left-4 bg-black text-white text-[10px] font-bold px-2 py-1 uppercase">Esgotando</span>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-bold text-lg">Legging Seamless Carbon</h3>
+                    <p class="text-brand font-black">R$ 129,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden rounded-xl bg-gray-200 aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Top High Impact" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                        <button class="bg-white p-3 rounded-full hover:bg-brand hover:text-white transition"><i class="fa-solid fa-cart-plus"></i></button>
+                        <button class="bg-white p-3 rounded-full hover:bg-brand hover:text-white transition"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-bold text-lg">Top High Impact White</h3>
+                    <p class="text-brand font-black">R$ 89,90</p>
+                </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden rounded-xl bg-gray-200 aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1583454155184-870a1f63aebc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Short Ciclista" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                        <button class="bg-white p-3 rounded-full hover:bg-brand hover:text-white transition"><i class="fa-solid fa-cart-plus"></i></button>
+                        <button class="bg-white p-3 rounded-full hover:bg-brand hover:text-white transition"><i class="fa-solid fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h3 class="font-bold text-lg">Short Ciclista Glow</h3>
+                    <p class="text-brand font-black">R$ 75,00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Consultoria -->
+    <section id="consultoria" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Jeh Fitness Training" class="rounded-2xl shadow-2xl">
+                </div>
+                <div class="lg:w-1/2">
+                    <span class="text-brand font-bold uppercase tracking-widest text-sm">Metodologia Exclusiva</span>
+                    <h2 class="text-4xl md:text-5xl font-black uppercase mt-2 mb-6 leading-tight">Mude seu corpo, <br>mude sua mente.</h2>
+                    <p class="text-gray-600 mb-8 text-lg">A consultoria online da Jeh Fitness oferece treinos personalizados, acompanhamento nutricional e suporte via WhatsApp para que você alcance sua melhor versão em tempo recorde.</p>
+                    
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-brand text-xl"></i>
+                            <span class="font-medium text-gray-700">Planilha de treinos personalizada (Academia ou Casa)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-brand text-xl"></i>
+                            <span class="font-medium text-gray-700">Protocolo alimentar focado em resultados</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check-circle text-brand text-xl"></i>
+                            <span class="font-medium text-gray-700">Acesso ao app exclusivo de alunos</span>
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/seunumerodetel" target="_blank" class="inline-block bg-black text-white px-8 py-4 rounded-xl font-bold hover:bg-brand transition-colors flex items-center justify-center gap-2 max-w-xs">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        QUERO SER ALUNA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="bg-white border-t border-gray-200 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="text-2xl font-black text-brand mb-6 uppercase tracking-tighter">JEH<span class="text-black">FITNESS</span></div>
+                    <p class="text-gray-500 text-sm leading-relaxed">Inspirando mulheres a conquistarem sua melhor forma física com estilo e determinação desde 2020.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://instagram.com/_jehfitness" target="_blank" class="text-xl text-gray-400 hover:text-brand"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-xl text-gray-400 hover:text-brand"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="text-xl text-gray-400 hover:text-brand"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-black uppercase mb-6 text-sm tracking-widest">Loja</h4>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-brand transition">Lançamentos</a></li>
+                        <li><a href="#" class="hover:text-brand transition">Conjuntos</a></li>
+                        <li><a href="#" class="hover:text-brand transition">Outlet</a></li>
+                        <li><a href="#" class="hover:text-brand transition">Acessórios</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-black uppercase mb-6 text-sm tracking-widest">Suporte</h4>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-brand transition">Trocas e Devoluções</a></li>
+                        <li><a href="#" class="hover:text-brand transition">Política de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-brand transition">Envios e Prazos</a></li>
+                        <li><a href="#" class="hover:text-brand transition">Fale Conosco</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-black uppercase mb-6 text-sm tracking-widest">Newsletter</h4>
+                    <p class="text-sm text-gray-500 mb-4">Receba novidades e promoções exclusivas.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Seu e-mail" class="bg-gray-100 border-none rounded-l-lg px-4 py-3 w-full text-sm focus:ring-1 focus:ring-brand">
+                        <button class="bg-brand text-white px-4 rounded-r-lg hover:bg-pink-700 transition">OK</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-8 text-center text-xs text-gray-400 font-medium">
+                &copy; 2024 JEH FITNESS. DESENVOLVIDO POR JEH FITNESS TEAM. TODOS OS DIREITOS RESERVADOS.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/seunumerodetel" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-40">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+            } else {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            }
+        }
+
+        // Suavizar scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
